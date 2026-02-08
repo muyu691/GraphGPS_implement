@@ -1,10 +1,9 @@
-# Learning Traffic Flows - Replication Project (Clean Version)
+# Learning Traffic Flows
 
 ## 📋 Project Overview
 
 This is a **clean replication** of the "Learning Traffic Flows" paper, containing only the essential core files.
 
-- **Created**: 1770546611.2713897
 - **Source Project**: GraphGPS-main
 - **Goal**: Predict traffic flows using GNNs
 
@@ -100,44 +99,11 @@ python main.py --cfg configs/GatedGCN/sioux-falls-GatedGCN.yaml
 python main.py --cfg configs/GatedGCN/sioux-falls-GatedGCN-with-edge-feats.yaml
 ```
 
-**Expected Time**: ~2.5 hours per experiment (200 epochs)
-
-### 4. Visualize Results (Optional)
+### 4. Visualize Results
 
 ```bash
 python visualize_results.py
 ```
-
----
-
-## 📊 Core Files
-
-### ✅ New Files (9 files)
-
-Files created specifically for Learning Traffic Flows replication:
-
-1. `create_sioux_data/generate_scenarios.py` - LHS sampling
-2. `create_sioux_data/build_pyg_data.py` - PyG data construction
-3. `create_sioux_data/main_create_dataset.py` - Main data generation
-4. `create_sioux_data/utils.py` - Utility functions
-5. `graphgps/loader/dataset/sioux_falls_traffic.py` - Custom dataset
-6. `graphgps/head/edge_regression.py` - Edge regression head
-7. `configs/GatedGCN/sioux-falls-GatedGCN.yaml` - Experiment A config
-8. `configs/GatedGCN/sioux-falls-GatedGCN-with-edge-feats.yaml` - Experiment B config
-9. `visualize_results.py` - Visualization script
-
-### ✏️ Modified Files (6 files)
-
-Files modified from GraphGPS base:
-
-1. `create_sioux_data/load_sioux.py` - Adapted for Sioux Falls
-2. `create_sioux_data/sue_solver.py` - Frank-Wolfe solver
-3. `graphgps/loader/dataset/__init__.py` - Register dataset
-4. `graphgps/loader/master_loader.py` - Register loader
-5. `graphgps/encoder/linear_edge_encoder.py` - Support 3D edge features
-6. `graphgps/head/__init__.py` - Register output head
-
----
 
 ## 🎯 Experiment Configuration
 
@@ -160,61 +126,6 @@ Files modified from GraphGPS base:
 - **Optimizer**: AdamW
 - **Loss**: L1 (MAE)
 
----
-
-## 📈 Expected Results
-
-Based on the paper, expected metrics:
-
-- **MAE**: < 100 vehicles/hour
-- **R²**: > 0.95
-- **Spearman**: > 0.98
-
----
-
-## 📂 Comparison with Full Project
-
-| Project | Files | Description |
-|---------|-------|-------------|
-| Full GraphGPS-main | 300+ | Includes all examples, tests, other datasets |
-| This Clean Version | ~50 | Only core files needed for replication |
-
-**Advantages**:
-- ✅ Clear project structure
-- ✅ Faster installation and understanding
-- ✅ Focus only on Sioux Falls traffic prediction
-- ✅ Easy to share and deploy
-
----
-
-## 🔧 Troubleshooting
-
-### Issue 1: Data Generation Failed
-
-```bash
-# Check network file
-ls sioux_data/SiouxFalls_net.tntp
-
-# Check Python environment
-python -c "import numpy, networkx, torch; print('OK')"
-```
-
-### Issue 2: Training Cannot Find Data
-
-```bash
-# Verify data is generated
-ls create_sioux_data/processed_data/processed/
-# Should see: train_dataset.pt, val_dataset.pt, test_dataset.pt
-```
-
-### Issue 3: Import Errors
-
-```bash
-# Reinstall GraphGPS
-pip install -e . --force-reinstall
-```
-
----
 
 ## 📚 References
 
@@ -223,12 +134,3 @@ pip install -e . --force-reinstall
 3. **Sioux Falls Network** - Traffic network data
 
 ---
-
-## 📧 Contact
-
-For more information, refer to the complete documentation:
-- `REPLICATION_FILES_CHECKLIST.md` - File checklist
-- `MODIFICATIONS_SUMMARY.md` - Modification summary
-- `DATASET_CREATION_GUIDE.md` - Data generation guide
-
-**Happy Replicating!** 🎉
