@@ -1,6 +1,6 @@
 # Learning Traffic Flows
 
-## 📋 Project Overview
+## Project Overview
 
 This is a **clean replication** of the "Learning Traffic Flows" paper, containing only the essential core files.
 
@@ -9,7 +9,7 @@ This is a **clean replication** of the "Learning Traffic Flows" paper, containin
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 GraphGPS-Traffic-Replication-CLEAN/
@@ -52,7 +52,7 @@ GraphGPS-Traffic-Replication-CLEAN/
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 ### 1. Environment Setup
 
@@ -105,7 +105,7 @@ python main.py --cfg configs/GatedGCN/sioux-falls-GatedGCN-with-edge-feats.yaml
 python visualize_results.py
 ```
 
-## 🎯 Experiment Configuration
+## Experiment Configuration
 
 ### Dataset
 - **Samples**: 10,000
@@ -127,10 +127,10 @@ python visualize_results.py
 - **Loss**: L1 (MAE)
 
 
-## 📚 References
+## References
 
-1. **Learning Traffic Flows** - Original paper
-2. **GraphGPS** - Base framework
-3. **Sioux Falls Network** - Traffic network data
+1. **Learning Traffic Flows** - Original paper - https://arxiv.org/pdf/2505.11230
+2. **GraphGPS** - Base framework - https://github.com/rampasek/GraphGPS
+3. **Sioux Falls Network** - Traffic network data 
 
 ---
